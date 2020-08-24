@@ -52,8 +52,8 @@ public class ChaosCreator extends JavaPlugin implements SlimefunAddon {
         // Now you just have to register the item
         // RecipeType.ENHANCED_CRAFTING_TABLE refers to the machine in which this item is crafted in.
         // Recipy Types from Slimefun itself will automatically add the recipe to that machine
-        SlimefunItem sfitem = new SlimefunItem(category, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
-        sfitem.register(this);
+        ChaosSpawner spawner = new ChaosSpawner(category, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+        spawner.register(this);
     }
 
     @Override
