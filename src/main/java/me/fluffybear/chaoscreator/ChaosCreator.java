@@ -34,15 +34,15 @@ public class ChaosCreator extends JavaPlugin implements SlimefunAddon {
 
         // Create a new Category
         // This Category will use this ItemStack
-        ItemStack categoryItem = new CustomItem(Material.DIAMOND, "&4Addon Category", "", "&a> Click to open");
+        CustomItem categoryItem = new CustomItem(Material.CRYING_OBSIDIAN, "&4Chaos Creator");
 
         // Give your Category a unique id.
-        NamespacedKey categoryId = new NamespacedKey(this, "addon_category");
+        NamespacedKey categoryId = new NamespacedKey(this, "chaoscreator");
         Category category = new Category(categoryId, categoryItem);
 
         // Create a new Slimefun ItemStack
         // This class has many constructors, it is very important that you give each item a unique id.
-        SlimefunItemStack slimefunItem = new SlimefunItemStack("COOL_DIAMOND", Material.DIAMOND, "&4Cool Diamond", "&c+20% Coolness");
+        SlimefunItemStack slimefunItem = new SlimefunItemStack("CHAOS_SPAWNER", Material.SPAWNER, "&4Chaos Spawner", "", "&c+20% Chaos");
 
         // The Recipe is an ItemStack Array with a length of 9.
         // It represents a Shaped Recipe in a 3x3 crafting grid
@@ -52,8 +52,8 @@ public class ChaosCreator extends JavaPlugin implements SlimefunAddon {
         // Now you just have to register the item
         // RecipeType.ENHANCED_CRAFTING_TABLE refers to the machine in which this item is crafted in.
         // Recipy Types from Slimefun itself will automatically add the recipe to that machine
-        SlimefunItem item = new SlimefunItem(category, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
-        item.register(this);
+        SlimefunItem sfitem = new SlimefunItem(category, slimefunItem, RecipeType.ENHANCED_CRAFTING_TABLE, recipe);
+        sfitem.register(this);
     }
 
     @Override
